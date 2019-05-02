@@ -5,6 +5,8 @@ import { AUTH_CURRENT_USER } from "../store/modules/auth/types";
 const TextBuilder = ({ dispatch, user }) => {
     const [text, setText] = useState(user);
 
+    console.log(process.env.REACT_APP_BACKEND_DOMAIN);
+
     const saveInStorage = () => {
         if (text) {
             dispatch({ type: AUTH_CURRENT_USER, payload: text });

@@ -1,18 +1,10 @@
-import { persistCombineReducers, persistStore } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import { createStore } from "redux";
+import { persistStore } from "redux-persist";
+import { createStore, combineReducers } from "redux";
 
 import authReducer from "./modules/auth/reducer";
 import uiReducer from "./modules/ui/reducer";
 
-const rootPersistConfig = {
-    key: "root",
-    storage,
-    blacklist: ["ui"]
-    // whitelist: ["auth"]
-};
-
-const rootReducer = persistCombineReducers(rootPersistConfig, {
+const rootReducer = combineReducers({
     auth: authReducer,
     ui: uiReducer
 });
