@@ -1,0 +1,1 @@
+export const AUTH_CURRENT_USER = "AUTH_CURRENT_USER";
